@@ -1,17 +1,47 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Commands</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+
+  <button ion-button small color="danger">Currently in Proof of Concept</button>
+
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <button ion-item *ngFor="let command of commands" no-padding>
+            {{ command.title }}
+          </button>
+        </ion-list>
+
+        <button ion-button (click)="addCommand()">Add Command</button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <button ion-item *ngFor="let item of items" (click)="itemSelected(item)" no-padding>
+            <ion-card>
+              <pre>
+                    <code>
+                      {{ item.shortcut }}
+                    </code>
+                  </pre>
+              <ion-list padding>
+
+                {{ item.description }}
+
+              </ion-list>
+            </ion-card>
+          </button>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>
+

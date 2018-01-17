@@ -11,4 +11,18 @@ export class AboutPage {
 
   }
 
-}
+  items = [{
+      'shortcut': 'Visual Studio Code',
+      'description': 'Shortcuts for Visual Studio Code'
+    },
+    {
+      'shortcut': 'Ctrl + B',
+      'description': 'Beautify selection (must have beautify plugin installed, and may need to be configured)'
+    },
+    {
+      'shortcut': 'Alt + Up/Down',
+      'description': 'Move line or selection up or down'
+    }
+  ];
+
+  }
