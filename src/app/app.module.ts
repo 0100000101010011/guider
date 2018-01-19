@@ -7,14 +7,14 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-
-//import { SetupPage } from '../../app/setup/setup';
+import { AddCommandPage } from '../pages/add-command/add-command';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { AddCommandPage } from '../pages/add-command/add-command';
-import { CommandServiceProvider } from '../providers/command-service/command-service';
+
 import { IonicStorageModule } from '@ionic/storage';
+
+import { CommandServiceProvider } from '../providers/command-service/command-service';
 
 @NgModule({
   declarations: [
@@ -24,8 +24,6 @@ import { IonicStorageModule } from '@ionic/storage';
     HomePage,
     TabsPage, 
     AddCommandPage
-    /*, 
-    SetupPage*/
   ],
   imports: [
     BrowserModule,
@@ -40,14 +38,12 @@ import { IonicStorageModule } from '@ionic/storage';
     HomePage,
     TabsPage, 
     AddCommandPage
-    /*, 
-    SetupPage*/
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CommandServiceProvider, 
+    CommandServiceProvider 
   ]
 })
 export class AppModule {}

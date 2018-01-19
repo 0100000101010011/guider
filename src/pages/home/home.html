@@ -1,47 +1,32 @@
 <ion-header>
   <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="popAddCommand()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>Commands</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-  <button ion-button small color="danger">Currently in Proof of Concept</button>
+  <ion-item>
+    <button ion-button small (click)="popAddCommand()">Add Command</button>
 
-  <ion-grid no-padding>
-    <ion-row>
-      <ion-col>
-        <ion-list>
-          <button ion-item *ngFor="let command of commands" no-padding>
+    <button ion-button small color="danger">Currently in Proof of Concept</button>
+  </ion-item>
+
+  <ion-list>
+    <ion-item *ngFor="let command of commands" no-padding>
+      <ion-card>
+        <pre>
+          <code>
             {{ command.title }}
-          </button>
-        </ion-list>
-
-        <button ion-button (click)="addCommand()">Add Command</button>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col>
-        <ion-list>
-          <button ion-item *ngFor="let item of items" (click)="itemSelected(item)" no-padding>
-            <ion-card>
-              <pre>
-                    <code>
-                      {{ item.shortcut }}
-                    </code>
-                  </pre>
-              <ion-list padding>
-
-                {{ item.description }}
-
-              </ion-list>
-            </ion-card>
-          </button>
-        </ion-list>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+          </code>
+        </pre>
+      </ion-card>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
-

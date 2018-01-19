@@ -6,17 +6,16 @@
 
 </ion-header>
 
-
 <ion-content padding>
 
   <button ion-button small color="danger">Currently in Proof of Concept</button>
 
-  <form (ngSubmit)="saveCommand(f.value)" #f="ngForm">
+  <!-- button does not work for some reason when submitting this, but pressing enter does, fix this -->
+  <form (ngSubmit)="addCommand(f.value)" #f="ngForm">
     <ion-item>
-      <ion-label>Title</ion-label>
-      <ion-input name="title" ngModel></ion-input>
+      <ion-label floating>Command</ion-label>
+      <ion-input type="text" name="title" ngModel required></ion-input>
     </ion-item>
-    <button ion-button type="submit">Save Command</button>
   </form>
+  <button ion-button small type="submit" [disabled]="!f.valid" margin>Save Command</button>
 </ion-content>
-
