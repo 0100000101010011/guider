@@ -1,16 +1,39 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import { Storage } from '@ionic/storage';
+
+import { AddShortcutPage } from '../add-shortcut/add-shortcut';
+
+import { ShortcutServiceProvider } from '../../providers/shortcut-service/shortcut-service';
+
 @Component({
-  selector: 'page-about',
-  templateUrl: 'about.html'
+  selector: 'page-shortcuts',
+  templateUrl: 'shortcuts.html'
 })
-export class AboutPage {
+export class ShortcutsPage {
 
-  constructor(public navCtrl: NavController) {
+  shortcuts: {title: string}[] = [];
 
+  constructor(public navCtrl: NavController, private shortcutService: ShortcutServiceProvider, private storage: Storage) {
+    //..
   }
 
+  ionViewWillEnter() {
+    this.shortcutService.getShortcuts().then(
+      (shortcuts) => this.shortcuts = shortcuts
+    );
+  }
+
+  popAddShortcut() {
+    this.navCtrl.push(AddShortcutPage);
+  }
+
+  clearShortcutStorage() {
+    this.storage.set('shortcuts', null);
+  }
+
+  /*
   items = [{
       'shortcut': 'Visual Studio Code',
       'description': 'Shortcuts for Visual Studio Code'
@@ -36,5 +59,7 @@ export class AboutPage {
       'description': 'Change theme color'
     }
   ];
+
+  */
 
   }

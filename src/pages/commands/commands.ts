@@ -1,18 +1,23 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+
+import { Storage } from '@ionic/storage';
+
 import { AddCommandPage } from '../add-command/add-command';
+
 import { CommandServiceProvider } from '../../providers/command-service/command-service';
 
+
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-commands',
+  templateUrl: 'commands.html'
 })
-export class HomePage {
+export class CommandsPage {
 
   commands: {title: string}[] = [];
 
-  constructor(public navCtrl: NavController, private commandService: CommandServiceProvider) {
-
+  constructor(public navCtrl: NavController, private commandService: CommandServiceProvider, private storage: Storage) {
+    //..
   }
 
   ionViewWillEnter() {
@@ -23,6 +28,10 @@ export class HomePage {
 
   popAddCommand() {
     this.navCtrl.push(AddCommandPage);
+  }
+
+  clearCommandStorage() {
+    this.storage.set('commands', null);
   }
 
 /*
