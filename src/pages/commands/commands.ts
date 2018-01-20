@@ -7,6 +7,7 @@ import { AddCommandPage } from '../add-command/add-command';
 
 import { CommandServiceProvider } from '../../providers/command-service/command-service';
 
+import { reorderArray } from 'ionic-angular';
 
 @Component({
   selector: 'page-commands',
@@ -32,6 +33,10 @@ export class CommandsPage {
 
   clearCommandStorage() {
     this.storage.set('commands', null);
+  }
+
+  reorderCommands(indexes) {
+    this.commands = reorderArray(this.commands, indexes);
   }
 
 /*

@@ -20,18 +20,20 @@
   </ion-item>
 
   <ion-list>
-    <ion-item *ngFor="let command of commands" no-padding>
-      <ion-card>
-        <pre>
+    <ion-item-group reorder="true" (ionItemReorder)="reorderCommands($event)">
+      <ion-item *ngFor="let command of commands" no-padding>
+        <ion-card>
+          <pre>
           <code>
             {{ command.commandText }}
           </code>
         </pre>
-        <p padding>
-        {{ command.commandDescription }}
-      </p>
-      </ion-card>
-    </ion-item>
+          <p padding>
+            {{ command.commandDescription }}
+          </p>
+        </ion-card>
+      </ion-item>
+    </ion-item-group>
   </ion-list>
 
 </ion-content>

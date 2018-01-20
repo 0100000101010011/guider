@@ -7,6 +7,8 @@ import { AddShortcutPage } from '../add-shortcut/add-shortcut';
 
 import { ShortcutServiceProvider } from '../../providers/shortcut-service/shortcut-service';
 
+import { reorderArray } from 'ionic-angular';
+
 @Component({
   selector: 'page-shortcuts',
   templateUrl: 'shortcuts.html'
@@ -31,6 +33,10 @@ export class ShortcutsPage {
 
   clearShortcutStorage() {
     this.storage.set('shortcuts', null);
+  }
+
+  reorderShortcuts(indexes) {
+    this.shortcuts = reorderArray(this.shortcuts, indexes);
   }
 
   /*
