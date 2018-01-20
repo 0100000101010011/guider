@@ -14,8 +14,14 @@
   <form (ngSubmit)="addShortcut(f.value)" #f="ngForm">
     <ion-item>
       <ion-label floating>Enter new shortcut</ion-label>
-      <ion-input type="text" name="title" ngModel required></ion-input>
+      <ion-input type="text" name="shortcutText" ngModel required></ion-input>
     </ion-item>
+
+    <ion-item>
+      <ion-label floating>Enter new shortcut description</ion-label>
+      <ion-input type="text" name="shortcutDescription" ngModel required></ion-input>
+    </ion-item>
+
     <button ion-button small type="submit" [disabled]="!f.valid" margin>Save Shortcut</button>
   </form>
 </ion-content>

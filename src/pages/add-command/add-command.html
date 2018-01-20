@@ -14,8 +14,14 @@
   <form (ngSubmit)="addCommand(f.value)" #f="ngForm">
     <ion-item>
       <ion-label floating>Enter new command</ion-label>
-      <ion-input type="text" name="title" ngModel required></ion-input>
+      <ion-input type="text" name="commandText" ngModel required></ion-input>
     </ion-item>
+
+    <ion-item>
+      <ion-label floating>Enter new command description</ion-label>
+      <ion-input type="text" name="commandDescription" ngModel required></ion-input>
+    </ion-item>
+
     <button ion-button small type="submit" [disabled]="!f.valid" margin>Save Command</button>
   </form>
 </ion-content>

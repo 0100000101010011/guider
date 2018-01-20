@@ -13,7 +13,7 @@ import { ShortcutServiceProvider } from '../../providers/shortcut-service/shortc
 })
 export class ShortcutsPage {
 
-  shortcuts: {title: string}[] = [];
+  shortcuts: { shortcutText: string, shortcutDescription: string}[] = [];
 
   constructor(public navCtrl: NavController, private shortcutService: ShortcutServiceProvider, private storage: Storage) {
     //..

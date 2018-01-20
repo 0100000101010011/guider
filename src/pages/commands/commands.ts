@@ -14,7 +14,7 @@ import { CommandServiceProvider } from '../../providers/command-service/command-
 })
 export class CommandsPage {
 
-  commands: {title: string}[] = [];
+  commands: { commandText: string, commandDescription: string }[] = [];
 
   constructor(public navCtrl: NavController, private commandService: CommandServiceProvider, private storage: Storage) {
     //..

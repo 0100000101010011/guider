@@ -13,7 +13,7 @@ export class AddCommandPage {
 
   }
 
-  addCommand(value: {title: string}) {
+  addCommand(value: {commandText: string, commandDescription: string}) {
     this.commandService.addNewCommand(value);
     this.navCtrl.pop();
   }

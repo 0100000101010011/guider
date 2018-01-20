@@ -5,13 +5,13 @@ import { Storage } from '@ionic/storage';
 export class ShortcutServiceProvider {
 
   //create a new commands object, then what's the rest going on with {}[] =[]?
-  private shortcuts: { title: string }[] = [];
+  private shortcuts: { shortcutText: string, shortcutDescription: string }[] = [];
 
   constructor(private storage: Storage) {
     //...
   }
 
-  addNewShortcut(newShortcut: {title: string}) {
+  addNewShortcut(newShortcut: {shortcutText: string, shortcutDescription: string}) {
     this.shortcuts.push(newShortcut);
     this.storage.set('shortcuts', this.shortcuts);
   }

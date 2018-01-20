@@ -13,7 +13,7 @@ export class AddShortcutPage {
 
   }
 
-  addShortcut(value: {title: string}) {
+  addShortcut(value: {shortcutText: string, shortcutDescription}) {
     this.shortcutService.addNewShortcut(value);
     this.navCtrl.pop();
   }

@@ -5,15 +5,16 @@ import { Storage } from '@ionic/storage';
 export class CommandServiceProvider {
 
   //create a new commands object, then what's the rest going on with {}[] =[]?
-  private commands: { title: string }[] = [];
+  private commands: { commandText: string, commandDescription: string }[] = [];
 
   constructor(private storage: Storage) {
     //...
   }
 
-  addNewCommand(newCommand: {title: string}) {
+  addNewCommand(newCommand: {commandText: string, commandDescription: string}) {
     this.commands.push(newCommand);
     this.storage.set('commands', this.commands);
+    console.log(this.storage.get('commands'));
   }
 
   getCommands() {
