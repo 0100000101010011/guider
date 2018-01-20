@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { ShortcutsPage } from '../shortcuts/shortcuts';
-import { ContactPage } from '../contact/contact';
+import { InfoPage } from '../info/info';
 import { CommandsPage } from '../commands/commands';
 
 @Component({
@@ -11,7 +11,7 @@ export class TabsPage {
 
   tab1Root = CommandsPage;
   tab2Root = ShortcutsPage;
-  tab3Root = ContactPage;
+  tab3Root = InfoPage;
 
   constructor() {
 

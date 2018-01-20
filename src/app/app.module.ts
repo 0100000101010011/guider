@@ -6,7 +6,7 @@ import { MyApp } from './app.component';
 import { TabsPage } from '../pages/tabs/tabs';
 import { CommandsPage } from '../pages/commands/commands';
 import { ShortcutsPage } from '../pages/shortcuts/shortcuts';
-import { ContactPage } from '../pages/contact/contact';
+import { InfoPage } from '../pages/info/info';
 import { AddCommandPage } from '../pages/add-command/add-command';
 import { AddShortcutPage } from '../pages/add-shortcut/add-shortcut';
 
@@ -24,7 +24,7 @@ import { ShortcutServiceProvider } from '../providers/shortcut-service/shortcut-
     TabsPage, 
     CommandsPage,
     ShortcutsPage,
-    ContactPage,
+    InfoPage,
     AddCommandPage, 
     AddShortcutPage
   ],
@@ -39,7 +39,7 @@ import { ShortcutServiceProvider } from '../providers/shortcut-service/shortcut-
     TabsPage, 
     CommandsPage,
     ShortcutsPage,
-    ContactPage,
+    InfoPage,
     AddCommandPage, 
     AddShortcutPage
   ],
