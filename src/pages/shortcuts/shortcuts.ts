@@ -9,6 +9,8 @@ import { ShortcutServiceProvider } from '../../providers/shortcut-service/shortc
 
 import { reorderArray } from 'ionic-angular';
 
+import { AlertController } from 'ionic-angular';
+
 @Component({
   selector: 'page-shortcuts',
   templateUrl: 'shortcuts.html'
@@ -17,7 +19,7 @@ export class ShortcutsPage {
 
   shortcuts: { shortcutText: string, shortcutDescription: string}[] = [];
 
-  constructor(public navCtrl: NavController, private shortcutService: ShortcutServiceProvider, private storage: Storage) {
+  constructor(public navCtrl: NavController, private shortcutService: ShortcutServiceProvider, private storage: Storage, public alertCtrl: AlertController) {
     //..
   }
 
@@ -37,6 +39,37 @@ export class ShortcutsPage {
 
   reorderShortcuts(indexes) {
     this.shortcuts = reorderArray(this.shortcuts, indexes);
+  }
+
+  alertDeleteShortcut(shortcut){
+
+    let confirm = this.alertCtrl.create({
+      title: 'Delete shortcut?',
+      message: 'You sure you want to delete this shortcut?',
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: () => {
+            //..
+          }
+        },
+        {
+          text: 'Delete',
+          handler: () => {
+            this.deleteShortcut(shortcut);
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+
+  deleteShortcut(shortcut) {
+    var index = this.shortcuts.indexOf(shortcut, 0);
+    if (index > -1) {
+      this.shortcuts.splice(index, 1);
+      this.storage.set('shortcuts', this.shortcuts);
+    }
   }
 
   /*

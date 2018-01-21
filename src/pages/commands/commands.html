@@ -22,12 +22,17 @@
   <ion-list>
     <ion-item-group reorder="true" (ionItemReorder)="reorderCommands($event)">
       <ion-item *ngFor="let command of commands" no-padding>
+        
+        <button ion-button small color="danger" (click)="alertDeleteCommand(command)" item-right>
+          <ion-icon name="ios-trash"></ion-icon>
+        </button>
+      
         <ion-card>
           <pre>
-          <code>
-            {{ command.commandText }}
-          </code>
-        </pre>
+            <code>
+              {{ command.commandText }}
+            </code>
+          </pre>
           <p padding>
             {{ command.commandDescription }}
           </p>

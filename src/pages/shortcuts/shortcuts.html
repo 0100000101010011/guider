@@ -22,6 +22,11 @@
   <ion-list>
     <ion-item-group reorder="true" (ionItemReorder)="reorderShortcuts($event)">
       <ion-item *ngFor="let shortcut of shortcuts" no-padding>
+
+        <button ion-button small color="danger" (click)="alertDeleteShortcut(shortcut)" item-right>
+          <ion-icon name="ios-trash"></ion-icon>
+        </button>
+
         <ion-card>
           <pre>
           <code>

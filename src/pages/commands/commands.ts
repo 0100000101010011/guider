@@ -9,6 +9,8 @@ import { CommandServiceProvider } from '../../providers/command-service/command-
 
 import { reorderArray } from 'ionic-angular';
 
+import { AlertController } from 'ionic-angular';
+
 @Component({
   selector: 'page-commands',
   templateUrl: 'commands.html'
@@ -17,7 +19,7 @@ export class CommandsPage {
 
   commands: { commandText: string, commandDescription: string }[] = [];
 
-  constructor(public navCtrl: NavController, private commandService: CommandServiceProvider, private storage: Storage) {
+  constructor(public navCtrl: NavController, private commandService: CommandServiceProvider, private storage: Storage, public alertCtrl: AlertController) {
     //..
   }
 
@@ -37,6 +39,37 @@ export class CommandsPage {
 
   reorderCommands(indexes) {
     this.commands = reorderArray(this.commands, indexes);
+  }
+
+  alertDeleteCommand(command){
+
+    let confirm = this.alertCtrl.create({
+      title: 'Delete command?',
+      message: 'You sure you want to delete this command?',
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: () => {
+            //..
+          }
+        },
+        {
+          text: 'Delete',
+          handler: () => {
+            this.deleteCommand(command);
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+
+  deleteCommand(command) {
+    var index = this.commands.indexOf(command, 0);
+    if (index > -1) {
+      this.commands.splice(index, 1);
+      this.storage.set('commands', this.commands);
+    }
   }
 
 /*
