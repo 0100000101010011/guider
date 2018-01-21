@@ -198,6 +198,10 @@ export class CommandsPage {
     'description': 'Electron specific commands'
   },
   {
+    'shortcut': 'npm run dist',
+    'description': 'Package the app to a windows installer'
+  },
+  {
     'shortcut': 'electron .',
     'description': 'Start electron desktop app'
   },
