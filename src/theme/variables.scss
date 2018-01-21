@@ -33,6 +33,8 @@ $app-direction: ltr;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
+// Classic theme
+/*
 $colors: (
   primary:    #488aff,
   secondary:  #32db64,
@@ -40,7 +42,27 @@ $colors: (
   light:      #f4f4f4,
   dark:       #222
 );
+*/
 
+// Guider theme 1
+$colors: (
+  primary:    #26b693,
+  secondary:  #016950,
+  danger:     #b64926,
+  light:      #f4f4f4,
+  dark:       #222
+);
+
+// Guider theme 2
+/*
+$colors: (
+  primary:    #b64926,
+  secondary:  #ff7a4f,
+  danger:     #69220b,
+  light:      #f4f4f4,
+  dark:       #222
+);
+*/
 
 // App iOS Variables
 // --------------------------------------------------
