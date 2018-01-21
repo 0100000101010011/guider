@@ -2,13 +2,29 @@
   "name": "Guider",
   "author": "Alvin Sanchez",
   "homepage": "//seggido.com/",
-  "version": "0.4.1",
+  "version": "0.5.1",
   "main": "server/main.js",
   "private": true,
+  "build": {
+    "appId": "com.guider.app",
+    "productName": "Guider",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "src/assets/icons/win/icon.ico"
+    },
+    "nsis": {
+      "installerIcon": "src/assets/icons/win/icon.ico",
+      "uninstallerIcon": "src/assets/icons/win/icon.ico",
+      "runAfterFinish": true
+    }
+  },
   "scripts": {
     "start": "electron .",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
+    "dist": "build",
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
