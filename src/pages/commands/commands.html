@@ -1,32 +1,37 @@
 <ion-header>
+
   <ion-navbar>
     <ion-buttons end>
-      <button ion-button icon-only (click)="popAddCommand()">
-        <ion-icon name="add"></ion-icon>
+      <button ion-button icon-only small (click)="popAddCommand()">
+        <ion-icon name="md-add" color="primary"></ion-icon>
       </button>
     </ion-buttons>
     <ion-title>Commands</ion-title>
   </ion-navbar>
+
 </ion-header>
 
 <ion-content padding>
 
-  <ion-item>
-    <button ion-button small (click)="popAddCommand()">Add Command</button>
+  <ion-item no-padding>
+    <button ion-button small color="primary" (click)="popAddCommand()">
+      <ion-icon name="md-add" color="light"></ion-icon>
+    </button>
 
-    <button ion-button small (click)="clearCommandStorage()">Clear Commands</button>
+    <!-- 
+    <button ion-button small color="dark" (click)="clearCommandStorage()">Clear</button>
+    -->
 
-    <button ion-button small color="danger">Currently in Proof of Concept</button>
   </ion-item>
 
   <ion-list>
     <ion-item-group reorder="true" (ionItemReorder)="reorderCommands($event)">
       <ion-item *ngFor="let command of commands" no-padding>
-        
-        <button ion-button small color="danger" (click)="alertDeleteCommand(command)" item-right>
-          <ion-icon name="ios-trash"></ion-icon>
+
+        <button ion-button icon-only small color="primary" (click)="alertDeleteCommand(command)" item-right>
+          <ion-icon name="md-remove" color="light"></ion-icon>
         </button>
-      
+
         <ion-card>
           <pre>
             <code>

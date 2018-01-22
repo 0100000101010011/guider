@@ -1,30 +1,35 @@
 <ion-header>
+
   <ion-navbar>
     <ion-buttons end>
-      <button ion-button icon-only (click)="popAddShortcut()">
-        <ion-icon name="add"></ion-icon>
+      <button ion-button icon-only small (click)="popAddShortcut()">
+        <ion-icon name="md-add" color="primary"></ion-icon>
       </button>
     </ion-buttons>
     <ion-title>Shortcuts</ion-title>
   </ion-navbar>
+
 </ion-header>
 
 <ion-content padding>
 
-  <ion-item>
-    <button ion-button small (click)="popAddShortcut()">Add Shortcut</button>
+  <ion-item no-padding>
+    <button ion-button small (click)="popAddShortcut()">
+      <ion-icon name="md-add" color="light"></ion-icon>
+    </button>
 
-    <button ion-button small (click)="clearShortcutStorage()">Clear Shortcuts</button>
+    <!--
+    <button ion-button small color="dark" (click)="clearShortcutStorage()">Clear</button>
+    -->
 
-    <button ion-button small color="danger">Currently in Proof of Concept</button>
   </ion-item>
 
   <ion-list>
     <ion-item-group reorder="true" (ionItemReorder)="reorderShortcuts($event)">
       <ion-item *ngFor="let shortcut of shortcuts" no-padding>
 
-        <button ion-button small color="danger" (click)="alertDeleteShortcut(shortcut)" item-right>
-          <ion-icon name="ios-trash"></ion-icon>
+        <button ion-button icon-only small color="primary" (click)="alertDeleteShortcut(shortcut)" item-right>
+          <ion-icon name="ios-remove"></ion-icon>
         </button>
 
         <ion-card>
