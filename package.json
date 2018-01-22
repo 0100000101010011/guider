@@ -2,7 +2,7 @@
   "name": "Guider",
   "author": "Seggido",
   "homepage": "//seggido.com/",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "main": "server/main.js",
   "private": true,
   "build": {

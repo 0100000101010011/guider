@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController} from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 import { CommandServiceProvider } from '../../providers/command-service/command-service';
 
 @IonicPage()
@@ -10,10 +10,10 @@ import { CommandServiceProvider } from '../../providers/command-service/command-
 export class AddCommandPage {
 
   constructor(private navCtrl: NavController, private commandService: CommandServiceProvider) {
-
+    //..
   }
 
-  addCommand(value: {commandText: string, commandDescription: string}) {
+  addCommand(value: { commandText: string, commandDescription: string }) {
     this.commandService.addNewCommand(value);
     this.navCtrl.pop();
   }

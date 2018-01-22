@@ -8,4 +8,4 @@ More Info: [Wiki](https://github.com/0100000101010011/guider/wiki/Overview)
 
 Guider provides a quick way to reference commands and keyboard shortcuts for various developer tools and utilities
 
-Give it a spin (Windows Desktop) > [http://bit.ly/2G0YOXn](http://bit.ly/2G0YOXn)
+Give it a spin (Windows Desktop) > [http://bit.ly/2n16CAu](http://bit.ly/2n16CAu)

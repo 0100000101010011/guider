@@ -10,7 +10,7 @@ import { ShortcutServiceProvider } from '../../providers/shortcut-service/shortc
 export class AddShortcutPage {
 
   constructor(private navCtrl: NavController, private shortcutService: ShortcutServiceProvider) {
-
+    //...
   }
 
   addShortcut(value: {shortcutText: string, shortcutDescription}) {

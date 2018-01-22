@@ -33,12 +33,15 @@ export class ShortcutsPage {
     this.navCtrl.push(AddShortcutPage);
   }
 
+  /*
   clearShortcutStorage() {
     this.storage.set('shortcuts', null);
   }
+  */
 
   reorderShortcuts(indexes) {
     this.shortcuts = reorderArray(this.shortcuts, indexes);
+    this.storage.set('shortcuts', this.shortcuts);
   }
 
   alertDeleteShortcut(shortcut){
