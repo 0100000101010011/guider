@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only small (click)="popChooseCategory()">
+        <ion-icon name="md-more" color="dark"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>More</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <h2 ion-text color="primary" padding>View Commands by Category</h2>
+
+  <form (ngSubmit)="filterCommands(f.value)" #f="ngForm">
+
+    <!-- list out the categories in popup -->
+    <ion-item>
+
+      <ion-label floating>Choose category</ion-label>
+      <ion-select name="category" ngModel required>
+        <!-- on click filter for the selected category -->
+        <ion-option *ngFor="let category of categories" (click)="filterCommands(f.value)">{{category.category}}</ion-option>
+      </ion-select>
+
+    </ion-item>
+
+    <button ion-button small type="submit" [disabled]="!f.valid" margin>View</button>
+
+  </form>
+
+  <h2 ion-text color="primary" padding>Delete Category</h2>
+
+  <p ion-text padding>pending...</p>
+
+  <h2 ion-text color="primary" padding>Delete Data</h2>
+
+  <p ion-text padding>Warning: This will completely delete all data</p>
+
+  <button ion-button small color="dark" (click)="clearCommandStorage()" margin>Delete</button>
+
+
+</ion-content>

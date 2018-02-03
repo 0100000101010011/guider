@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController} from 'ionic-angular';
+
 import { ShortcutServiceProvider } from '../../providers/shortcut-service/shortcut-service';
 
 @IonicPage()
@@ -13,7 +14,9 @@ export class AddShortcutPage {
     //...
   }
 
-  addShortcut(value: {shortcutText: string, shortcutDescription}) {
+  addShortcut(value: {
+    shortcutText: string, shortcutDescription
+  }) {
     this.shortcutService.addNewShortcut(value);
     this.navCtrl.pop();
   }

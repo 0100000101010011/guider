@@ -2,9 +2,9 @@
 
   <ion-navbar>
     <ion-buttons end>
-      <button ion-button icon-only small (click)="popAddCommand()">
-        <ion-icon name="md-add" color="primary"></ion-icon>
-      </button>
+      <button ion-button icon-only small (click)="popChooseCategory()">
+          <ion-icon name="md-more" color="dark"></ion-icon>
+        </button>
     </ion-buttons>
     <ion-title>Commands</ion-title>
   </ion-navbar>
@@ -14,18 +14,21 @@
 <ion-content padding>
 
   <ion-item no-padding>
+
     <button ion-button small color="primary" (click)="popAddCommand()">
       <ion-icon name="md-add" color="light"></ion-icon>
     </button>
 
-    <!-- 
-    <button ion-button small color="dark" (click)="clearCommandStorage()">Clear</button>
-    -->
+    <button ion-button small color="primary" (click)="popChooseCategory()">
+      <ion-icon name="md-more" color="light"></ion-icon>
+    </button>
 
   </ion-item>
 
   <ion-list>
+
     <ion-item-group reorder="true" (ionItemReorder)="reorderCommands($event)">
+
       <ion-item *ngFor="let command of commands" no-padding>
 
         <button ion-button icon-only small color="primary" (click)="alertDeleteCommand(command)" item-right>
@@ -33,17 +36,26 @@
         </button>
 
         <ion-card>
+
           <pre>
             <code>
-              {{ command.commandText }}
+              {{ command.text }}
             </code>
           </pre>
+
           <p padding>
-            {{ command.commandDescription }}
+            {{ command.description }}
+            <ion-badge text-end>
+              {{ command.category }}
+            </ion-badge>
           </p>
+
         </ion-card>
+
       </ion-item>
+
     </ion-item-group>
+
   </ion-list>
 
 </ion-content>

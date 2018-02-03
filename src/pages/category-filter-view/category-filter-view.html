@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only small (click)="popChooseCategory()">
+        <ion-icon name="md-more" color="dark"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item *ngFor="let categoryFilter of categoriesFilter" no-padding>
+
+    <ion-list>
+
+      <ion-card>
+
+        <pre>
+              <code>
+                {{ categoryFilter.text }}
+              </code>
+            </pre>
+
+        <p padding>
+          {{ categoryFilter.description }}
+          <ion-badge text-end>
+            {{ categoryFilter.category }}
+          </ion-badge>
+        </p>
+
+      </ion-card>
+
+    </ion-list>
+  </ion-item>
+
+</ion-content>

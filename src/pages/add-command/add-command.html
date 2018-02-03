@@ -1,24 +1,47 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Add Command</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only small (click)="popChooseCategory()">
+        <ion-icon name="md-more" color="dark"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>New</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content padding>
 
+
   <form (ngSubmit)="addCommand(f.value)" #f="ngForm">
+
     <ion-item>
+
       <ion-label floating>Enter new command</ion-label>
-      <ion-input type="text" name="commandText" ngModel required></ion-input>
+      <ion-input type="text" name="text" ngModel required></ion-input>
+
     </ion-item>
 
     <ion-item>
+
       <ion-label floating>Enter new command description</ion-label>
-      <ion-input type="text" name="commandDescription" ngModel required></ion-input>
+      <ion-input type="text" name="description" ngModel required></ion-input>
+
     </ion-item>
 
-    <button ion-button small type="submit" [disabled]="!f.valid" margin>Save </button>
+    <ion-item>
+
+      <ion-label floating>Add to category</ion-label>
+      <ion-select name="category" ngModel>
+        <ion-option *ngFor="let category of categories" (click)="addCommand()" value="{{category.category}}">{{category.category}}</ion-option>
+      </ion-select>
+
+    </ion-item>
+
+    <button ion-button small type="submit" [disabled]="!f.valid" margin>Save</button>
+
   </form>
+
+  <button ion-button small color="light" (click)="popAddCategory()" margin>Create new category</button>
 </ion-content>
