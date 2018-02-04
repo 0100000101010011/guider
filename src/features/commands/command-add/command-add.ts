@@ -18,12 +18,12 @@ import { CategoryProvider } from '../../../providers/category/category';
 export class CommandAddPage {
 
   //categories data model
-  categories: {
+  private categories: {
     category: string
   }[] = [];
 
   //commands data model
-  commands: {
+  private commands: {
     text: string,
     description: string,
     category: string

@@ -21,19 +21,19 @@ import { CategoryProvider } from '../../../providers/category/category';
 export class MorePage {
 
   //categories data model
-  categories: {
+  private categories: {
     category: string
   }[] = [];
 
   //categories filter data model
-  categoriesFilter: {
+  private categoriesFilter: {
     text: string,
     description: string,
     category: string
   }[] = [];
 
   //commands data model
-  commands: {
+  private commands: {
     text: string,
     description: string,
     category: string

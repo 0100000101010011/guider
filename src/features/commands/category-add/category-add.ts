@@ -14,7 +14,7 @@ import { CategoryProvider } from '../../../providers/category/category';
 export class CategoryAddPage {
 
   //categories data model
-  categories: {
+  private categories: {
     category: string
   }[] = [];
 

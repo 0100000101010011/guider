@@ -5,7 +5,7 @@ import { Storage } from '@ionic/storage';
 export class CommandProvider {
 
   //categories data model
-  commands: { 
+  private commands: { 
     text: string, 
     description: string, 
     category: string 

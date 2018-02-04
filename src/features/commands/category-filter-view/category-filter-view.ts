@@ -18,12 +18,12 @@ import { CategoryProvider } from '../../../providers/category/category';
 export class CategoryFilterViewPage {
 
   //categories data model
-  categories: { 
+  private categories: { 
     category: string 
   }[] = [];
 
   //categories filter data model
-  categoriesFilter: { 
+  private categoriesFilter: { 
     text: string, 
     description: string, 
     category: string
