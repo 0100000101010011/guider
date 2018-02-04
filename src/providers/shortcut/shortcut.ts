@@ -2,16 +2,24 @@ import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 
 @Injectable()
-export class ShortcutServiceProvider {
+export class ShortcutProvider {
 
-  //create a new commands object, then what's the rest going on with {}[] =[]?
-  private shortcuts: { shortcutText: string, shortcutDescription: string }[] = [];
+  //shortcuts data model
+  private shortcuts: {
+    shortcutText: string,
+    shortcutDescription: string
+  }[] = [];
 
-  constructor(private storage: Storage) {
+  constructor(
+    private storage: Storage
+  ) {
     //...
   }
 
-  addNewShortcut(newShortcut: {shortcutText: string, shortcutDescription: string}) {
+  addNewShortcut(newShortcut: {
+    shortcutText: string,
+    shortcutDescription: string
+  }) {
     this.shortcuts.push(newShortcut);
     this.storage.set('shortcuts', this.shortcuts);
   }

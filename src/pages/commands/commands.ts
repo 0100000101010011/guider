@@ -6,11 +6,11 @@ import { Storage } from '@ionic/storage';
 import { reorderArray } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 
-import { AddCommandPage } from '../add-command/add-command';
-import { CategoryFilterPage } from '../category-filter/category-filter';
+import { CommandAddPage } from '../../features/commands/command-add/command-add';
+import { MorePage } from '../../features/commands/more/more';
 
-import { CommandServiceProvider } from '../../providers/command-service/command-service';
-import { CategoryServiceProvider } from '../../providers/category-service/category-service';
+import { CommandProvider } from '../../providers/command/command';
+import { CategoryProvider } from '../../providers/category/category';
 
 
 @Component({
@@ -19,10 +19,12 @@ import { CategoryServiceProvider } from '../../providers/category-service/catego
 })
 export class CommandsPage {
 
+  //categories data model
   categories: {
     category: string
   }[] = [];
 
+  //commands data model
   commands: {
     text: string,
     description: string,
@@ -33,8 +35,8 @@ export class CommandsPage {
     public navCtrl: NavController,
     private storage: Storage,
     public alertCtrl: AlertController,
-    private commandService: CommandServiceProvider,
-    private categoryService: CategoryServiceProvider
+    private commandService: CommandProvider,
+    private categoryService: CategoryProvider
   ) {
 
   }
@@ -48,12 +50,12 @@ export class CommandsPage {
     );
   }
 
-  popAddCommand() {
-    this.navCtrl.push(AddCommandPage);
+  viewCommandAddPage() {
+    this.navCtrl.push(CommandAddPage);
   }
 
-  popChooseCategory() {
-    this.navCtrl.push(CategoryFilterPage);
+  viewMorePage() {
+    this.navCtrl.push(MorePage);
   }
 
   reorderCommands(indexes) {

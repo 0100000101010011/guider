@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 
 @Injectable()
-export class CategoryServiceProvider {
+export class CategoryProvider {
 
+  //categories data model
   private categories: { 
     category: string 
   }[] = [];
 
+  //categories filter data model
   private categoriesFilter: { 
     text: string, 
     description: string, 
@@ -20,8 +22,12 @@ export class CategoryServiceProvider {
     
   }
 
-  addNewCategory(newCategory: { category: string }) {
+  addNewCategory(newCategory: { 
+    category: string 
+  }) {
+    //first pull in the data into the private categories data model here in the class
     this.categories.push(newCategory);
+    //then store that populated data model into storage
     this.storage.set('categories', this.categories);
   }
 

@@ -21,6 +21,7 @@ coverage/
 dist/
 node_modules/
 release-builds/
+release_builds/
 tmp/
 temp/
 hooks/

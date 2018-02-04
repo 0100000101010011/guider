@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
 
 @Injectable()
-export class CommandServiceProvider {
+export class CommandProvider {
 
+  //categories data model
   commands: { 
     text: string, 
     description: string, 
@@ -16,7 +17,11 @@ export class CommandServiceProvider {
 
   }
 
-  addNewCommand(newCommand: { text: string, description: string, category: string }) {
+  addNewCommand(newCommand: { 
+    text: string, 
+    description: string, 
+    category: string 
+  }) {
     this.commands.push(newCommand);
     this.storage.set('commands', this.commands);
   }

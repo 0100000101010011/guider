@@ -2,7 +2,7 @@
 
   <ion-navbar>
     <ion-buttons end>
-      <button ion-button icon-only small (click)="popChooseCategory()">
+      <button ion-button icon-only small (click)="viewMorePage()">
         <ion-icon name="md-more" color="dark"></ion-icon>
       </button>
     </ion-buttons>
@@ -15,7 +15,7 @@
 
   <h2 ion-text color="primary" padding>View Commands by Category</h2>
 
-  <form (ngSubmit)="filterCommands(f.value)" #f="ngForm">
+  <form (ngSubmit)="filterCommandsByCategory(f.value)" #f="ngForm">
 
     <!-- list out the categories in popup -->
     <ion-item>
@@ -23,7 +23,7 @@
       <ion-label floating>Choose category</ion-label>
       <ion-select name="category" ngModel required>
         <!-- on click filter for the selected category -->
-        <ion-option *ngFor="let category of categories" (click)="filterCommands(f.value)">{{category.category}}</ion-option>
+        <ion-option *ngFor="let category of categories" (click)="filterCommandsByCategory(f.value)">{{category.category}}</ion-option>
       </ion-select>
 
     </ion-item>

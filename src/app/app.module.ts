@@ -12,15 +12,20 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { CommandsPage } from '../pages/commands/commands';
 import { ShortcutsPage } from '../pages/shortcuts/shortcuts';
 import { InfoPage } from '../pages/info/info';
-import { AddCommandPage } from '../pages/add-command/add-command';
-import { AddShortcutPage } from '../pages/add-shortcut/add-shortcut';
-import { AddCategoryPage } from '../pages/category-add/category-add';
-import { CategoryFilterPage } from '../pages/category-filter/category-filter';
-import { CategoryFilterViewPage } from '../pages/category-filter-view/category-filter-view';
 
-import { CommandServiceProvider } from '../providers/command-service/command-service';
-import { ShortcutServiceProvider } from '../providers/shortcut-service/shortcut-service';
-import { CategoryServiceProvider } from '../providers/category-service/category-service';
+//load features for commands pages
+import { CategoryAddPage } from '../features/commands/category-add/category-add';
+import { CategoryFilterViewPage } from '../features/commands/category-filter-view/category-filter-view';
+import { CommandAddPage } from '../features/commands/command-add/command-add';
+import { MorePage } from '../features/commands/more/more';
+
+//load features for shortcuts pages (update name to ShortcutAddPage)
+import { AddShortcutPage } from '../features/shortcuts/shortcut-add/shortcut-add';
+
+//load providers
+import { CommandProvider } from '../providers/command/command';
+import { ShortcutProvider } from '../providers/shortcut/shortcut';
+import { CategoryProvider } from '../providers/category/category';
 
 @NgModule({
   declarations: [
@@ -29,11 +34,11 @@ import { CategoryServiceProvider } from '../providers/category-service/category-
     CommandsPage,
     ShortcutsPage,
     InfoPage,
-    AddCommandPage, 
-    AddShortcutPage, 
-    AddCategoryPage, 
-    CategoryFilterPage, 
+    CategoryAddPage, 
     CategoryFilterViewPage, 
+    CommandAddPage, 
+    MorePage, 
+    AddShortcutPage, 
   ],
   imports: [
     BrowserModule,
@@ -47,19 +52,19 @@ import { CategoryServiceProvider } from '../providers/category-service/category-
     CommandsPage,
     ShortcutsPage,
     InfoPage,
-    AddCommandPage, 
-    AddShortcutPage, 
-    AddCategoryPage, 
-    CategoryFilterPage, 
-    CategoryFilterViewPage 
+    CategoryAddPage, 
+    CategoryFilterViewPage,  
+    CommandAddPage, 
+    MorePage, 
+    AddShortcutPage 
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CommandServiceProvider , 
-    ShortcutServiceProvider, 
-    CategoryServiceProvider
+    CommandProvider, 
+    ShortcutProvider, 
+    CategoryProvider
   ]
 })
 export class AppModule {}

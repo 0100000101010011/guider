@@ -2,7 +2,7 @@
   "name": "Guider",
   "author": "Seggido",
   "homepage": "//seggido.com/",
-  "version": "0.5.2",
+  "version": "0.6.2",
   "main": "server/main.js",
   "private": true,
   "build": {
@@ -12,11 +12,11 @@
       "target": [
         "nsis"
       ],
-      "icon": "src/assets/icons/win/icon.ico"
+      "icon": "src/assets/icon/win/icon.ico"
     },
     "nsis": {
-      "installerIcon": "src/assets/icons/win/icon.ico",
-      "uninstallerIcon": "src/assets/icons/win/icon.ico",
+      "installerIcon": "src/assets/icon/win/icon.ico",
+      "uninstallerIcon": "src/assets/icon/win/icon.ico",
       "runAfterFinish": true
     }
   },
@@ -28,9 +28,9 @@
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
-    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=src/assets/icons/mac/icon.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . guider --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron App\"",
-    "package-linux": "electron-packager . guider --overwrite --asar=true --platform=linux --arch=x64 --icon=src/assets/icons/png/icon.png --prune=true --out=release-builds"
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=src/assets/icon/mac/icon.icns --prune=true --out=release_builds",
+    "package-win": "electron-packager . guider --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/assets/icon/win/icon.ico --prune=true --out=release_builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron App\"",
+    "package-linux": "electron-packager . guider --overwrite --asar=true --platform=linux --arch=x64 --icon=src/assets/icon/png/icon.png --prune=true --out=release_builds"
   },
   "dependencies": {
     "@angular/common": "5.0.3",

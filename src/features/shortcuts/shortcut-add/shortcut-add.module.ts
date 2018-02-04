@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { AddShortcutPage } from './add-shortcut';
+import { AddShortcutPage } from './shortcut-add';
 
 @NgModule({
   declarations: [

@@ -1,16 +1,19 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController} from 'ionic-angular';
 
-import { ShortcutServiceProvider } from '../../providers/shortcut-service/shortcut-service';
+import { ShortcutProvider } from '../../../providers/shortcut/shortcut';
 
 @IonicPage()
 @Component({
-  selector: 'page-add-shortcut',
-  templateUrl: 'add-shortcut.html',
+  selector: 'page-shortcut-add',
+  templateUrl: 'shortcut-add.html',
 })
 export class AddShortcutPage {
 
-  constructor(private navCtrl: NavController, private shortcutService: ShortcutServiceProvider) {
+  constructor(
+    private navCtrl: NavController, 
+    private shortcutService: ShortcutProvider
+  ) {
     //...
   }
 

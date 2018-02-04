@@ -3,9 +3,9 @@ import { NavController } from 'ionic-angular';
 
 import { Storage } from '@ionic/storage';
 
-import { AddShortcutPage } from '../add-shortcut/add-shortcut';
+import { AddShortcutPage } from '../../features/shortcuts/shortcut-add/shortcut-add';
 
-import { ShortcutServiceProvider } from '../../providers/shortcut-service/shortcut-service';
+import { ShortcutProvider } from '../../providers/shortcut/shortcut';
 
 import { reorderArray } from 'ionic-angular';
 
@@ -19,7 +19,12 @@ export class ShortcutsPage {
 
   shortcuts: { shortcutText: string, shortcutDescription: string}[] = [];
 
-  constructor(public navCtrl: NavController, private shortcutService: ShortcutServiceProvider, private storage: Storage, public alertCtrl: AlertController) {
+  constructor(
+    public navCtrl: NavController, 
+    private shortcutService: ShortcutProvider, 
+    private storage: Storage, 
+    public alertCtrl: AlertController
+  ) {
     //..
   }
 

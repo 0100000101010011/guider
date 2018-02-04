@@ -6,9 +6,9 @@ import { Storage } from '@ionic/storage';
 import { reorderArray } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 
-import { CategoryFilterPage } from '../category-filter/category-filter';
+import { MorePage } from '../../../features/commands/more/more';
 
-import { CategoryServiceProvider } from '../../providers/category-service/category-service';
+import { CategoryProvider } from '../../../providers/category/category';
 
 
 @Component({
@@ -17,10 +17,12 @@ import { CategoryServiceProvider } from '../../providers/category-service/catego
 })
 export class CategoryFilterViewPage {
 
+  //categories data model
   categories: { 
     category: string 
   }[] = [];
 
+  //categories filter data model
   categoriesFilter: { 
     text: string, 
     description: string, 
@@ -31,8 +33,9 @@ export class CategoryFilterViewPage {
     public navCtrl: NavController,
     private storage: Storage,
     public alertCtrl: AlertController, 
-    private categoryService: CategoryServiceProvider
+    private categoryService: CategoryProvider
   ) {
+    
   }
 
   ionViewWillEnter() {
@@ -44,8 +47,8 @@ export class CategoryFilterViewPage {
     );
 
   }
-  popChooseCategory() {
-    this.navCtrl.push(CategoryFilterPage );
+  viewMorePage() {
+    this.navCtrl.push(MorePage);
   }
 
 }
