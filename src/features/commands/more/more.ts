@@ -3,6 +3,8 @@ import { IonicPage, NavController } from 'ionic-angular';
 
 import { Storage } from '@ionic/storage';
 
+import { AlertController } from 'ionic-angular';
+
 import { CommandsPage } from '../../../pages/commands/commands';
 
 import { CategoryFilterViewPage } from '../../../features/commands/category-filter-view/category-filter-view';
@@ -40,6 +42,7 @@ export class MorePage {
   constructor(
     public navCtrl: NavController,
     private storage: Storage,
+    public alertCtrl: AlertController,
     private commandService: CommandProvider,
     private categoryService: CategoryProvider
   ) {
@@ -81,7 +84,30 @@ export class MorePage {
     this.navCtrl.push(CategoryFilterViewPage);
   }
 
-  clearCommandStorage() {
+  alertDeleteData() {
+
+    let confirm = this.alertCtrl.create({
+      title: 'Delete data?',
+      message: 'You sure you want to delete all your commands data?',
+      buttons: [
+        {
+          text: 'Cancel',
+          handler: () => {
+            //..
+          }
+        },
+        {
+          text: 'Delete',
+          handler: () => {
+            this.deleteData();
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
+
+  deleteData() {
 
     this.storage.set('commands', null);
     this.storage.set('categories', null);
